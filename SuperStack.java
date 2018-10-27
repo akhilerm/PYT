@@ -1,9 +1,10 @@
+import java.io.*;
 public class SuperStack {
 
     Stack stack = new Stack();
 
     public static void main(String args[]) {
-        String[] operations = new String[]{"push 4",
+       /* String[] operations = new String[]{"push 4",
                                             "pop",
                                             "push 3",
                                             "push 5",
@@ -14,14 +15,32 @@ public class SuperStack {
                                             "inc 2 2",
                                             "push 4",
                                             "pop",
-                                            "pop"};
-        new SuperStack().superStack(operations);
+                                            "pop"};*/
+       String[] operations = new String[300];
+       int noOfInputs=0,i = 0;
+       try {
+           BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+           noOfInputs = Integer.parseInt(br.readLine());
+           i = 0;
+           while (i < noOfInputs) {
+               operations[i++] = br.readLine();
+               if (!validateCommand(operations[i-1])) {
+                   System.out.println("Invalid command");
+                   System.exit(0);
+               }
+           }
+       }
+       catch (IOException e) {
+           e.printStackTrace();
+       }
+       new SuperStack().superStack(operations, noOfInputs);
     }
 
-    private void superStack(String[] operations) {
+    private void superStack(String[] operations, int length) {
         int i = 0;
 
-        while (i<operations.length) {
+
+        while (i<length) {
             if (operations[i].contains("push")) {
                 int operand = Integer.parseInt(operations[i].split(" ")[1]);
                 stack.push(operand);
@@ -58,5 +77,13 @@ public class SuperStack {
         return noOfIncrements;
     }
 
+    static boolean validateCommand(String command) {
+        if (command.contains("push")
+        || command.contains("pop")
+        || command.contains("inc")) {
+            return true;
+        }
+        return false;
+    }
 
 }

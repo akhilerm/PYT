@@ -16,7 +16,7 @@ public class MinimumUniqueSum {
         catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(getMinimumUniqueSum(i, array));
+        System.out.println(getMinimumUniqueSum(noOfInputs, array));
 	}
 
 	private static int getMinimumUniqueSum(int n, int arr[]) {
