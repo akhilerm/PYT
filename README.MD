@@ -12,7 +12,7 @@ Compile the 3 source files
 3. `CountingPairs.java`
 
 
-#####To run Question 1
+###To run Question 1
 1. `java MinimumUniqueSum`
 2. Enter the no. of elements in the list
 3. Enter each element followed by an `<enter>`
@@ -25,7 +25,7 @@ Compile the 3 source files
 ```
 The above example shows 3 inputs
 
-#####To run Question 2
+###To run Question 2
 1.  `java SuperStack`
 2. Enter the no. of operations 
 3. Type each operation in a new line. If invalid command is typed,
@@ -40,7 +40,7 @@ push 4
 inc 2 1
 ```
 
-#####To run Question 3
+###To run Question 3
 1. `java CountingPairs`
 2. Enter no of elements in the list
 3. Enter each element and the value of `k` as specified in the question.
