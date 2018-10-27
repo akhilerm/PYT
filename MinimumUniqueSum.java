@@ -1,7 +1,7 @@
 public class MinimumUniqueSum {
 	public static void main(String args[]) {
-        int array[] = {3,1,2,7,2};
-        System.out.println(getMinimumUniqueSum(5,array));
+        int array[] = {3,1,2,7,2,2,3};
+        System.out.println(getMinimumUniqueSum(7,array));
 	}
 
 	private static int getMinimumUniqueSum(int n, int arr[]) {
