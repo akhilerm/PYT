@@ -1,13 +1,30 @@
+import java.io.*;
+
 public class CountingPairs {
     public static void main(String args[]) {
-        int[] array = {1,1,1,2};
-        System.out.println(new CountingPairs().countPairs(array, 1));
+//        int[] array = {1,1,1,2};
+        int array[] = new int[3000];
+        int noOfInputs = 0, k=0, i = 0;
+        try {
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            noOfInputs = Integer.parseInt(br.readLine());
+            i = 0;
+            while (i < noOfInputs) {
+                array[i++] = Integer.parseInt(br.readLine());
+            }
+            k = Integer.parseInt(br.readLine());
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(new CountingPairs().countPairs(array, noOfInputs, k));
     }
 
-    int countPairs(int array[], int k) {
+    int countPairs(int array[], int size, int k) {
         int count = 0;
-        Utils.sort(array, array.length);
-        int length = removeDuplicates(array, array.length);
+        Utils.sort(array, size);
+        int length = removeDuplicates(array, size);
         for (int i = 0;i < length;i++) {
             if (search(array, length, array[i] + k))
                 count ++;
