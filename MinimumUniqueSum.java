@@ -1,7 +1,22 @@
+import java.io.*;
 public class MinimumUniqueSum {
 	public static void main(String args[]) {
-        int array[] = {3,1,2,7,2,2,3};
-        System.out.println(getMinimumUniqueSum(7,array));
+//        int array[] = {3,1,2,7,2,2,3};
+        int array[] = new int[3000];
+        int noOfInputs,i = 0;
+        try {
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            noOfInputs = Integer.parseInt(br.readLine());
+            i = 0;
+            while (i < noOfInputs) {
+                array[i++] = Integer.parseInt(br.readLine());
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(getMinimumUniqueSum(i, array));
 	}
 
 	private static int getMinimumUniqueSum(int n, int arr[]) {
@@ -25,7 +40,7 @@ public class MinimumUniqueSum {
             sum +=arr[i];
         }
 
-        Utils.print(arr, n);
+//        Utils.print(arr, n);
 
         return sum;
 	}
