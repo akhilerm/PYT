@@ -10,7 +10,22 @@ public class MinimumUniqueSum {
 
         sort(arr,n);
 
-        
+        for (i = 0;i < n;i++) {
+            for (j = i+1;j < n;j++) {
+                if (arr[i] == arr[j]) {
+                    arr[j]++;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+
+        for (i = 0;i < n;i++) {
+            sum +=arr[i];
+        }
+
+        print(arr, n);
 
         return sum;
 	}
@@ -27,5 +42,13 @@ public class MinimumUniqueSum {
                 }
             }
         }
+    }
+
+    static void print(int arr[], int length) {
+        System.out.print("[");
+	    for (int i = 0;i < length;i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("]");
     }
 }
