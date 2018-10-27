@@ -32,10 +32,6 @@ public class Stack {
     }
 
     void printAll() {
-        System.out.print("[");
-        for (int i = 0;i <= top;i++) {
-            System.out.print(store[top] + " ");
-        }
-        System.out.println("]");
+        Utils.print(store, top+1);
     }
 }
